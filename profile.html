@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C++alculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #121212;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      main {
+        flex: 1;
+      }
+
+      .calculator {
+        max-width: 320px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #1e1e1e;
+        border-radius: 10px;
+      }
+      .btn {
+        width: 100%;
+        height: 60px;
+        font-size: 1.2rem;
+      }
+      .display {
+        height: 60px;
+        font-size: 1.5rem;
+        text-align: right;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand align-items-center" href="#"
+          ><img src="src/logo.svg" height="30" alt="C++alculator Logo"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Головна</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Про сайт</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="profile.html">Профіль</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Реєстрація</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-5">
+      <div class="card p-4 bg-transparent">
+        <div class="row g-4">
+          <div class="col-md-4 border-end border-secondary">
+            <div class="text-center">
+              <img
+                src="src/profile.svg"
+                class="rounded-circle mb-3 border border-secondary p-1 img-fluid"
+                style="max-width: 120px"
+                alt="avatar"
+              />
+              <h5 class="text-white">Студент КПІ</h5>
+              <button class="btn btn-primary mb-2 w-100">Змінити фото</button>
+              <button
+                class="btn btn-outline-danger btn-sm w-100"
+                style="opacity: 0.8"
+              >
+                Видалити акаунт
+              </button>
+            </div>
+
+            <div class="mt-4">
+              <h6
+                class="text-white-50 mb-3"
+                style="
+                  font-size: 0.85rem;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                Статистика
+              </h6>
+
+              <div
+                class="d-flex justify-content-between align-items-center mt-2"
+              >
+                <span class="text-white" style="opacity: 0.6; font-size: 0.9rem"
+                  >Кліків на калькуляторі</span
+                >
+                <span class="badge bg-primary">12</span>
+              </div>
+
+              <div
+                class="d-flex justify-content-between align-items-center mt-2"
+              >
+                <span class="text-white" style="opacity: 0.6; font-size: 0.9rem"
+                  >Найбільше обраховане число</span
+                >
+                <span class="badge bg-success">1059</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h5 class="mb-4 text-white" style="opacity: 0.6">
+              Особиста інформація
+            </h5>
+
+            <div class="row mb-3">
+              <div class="col-5 text-white" style="opacity: 0.6">
+                Ім’я та Прізвище
+              </div>
+              <div class="col-7 text-white">Шелемін Олексій</div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-5 text-white" style="opacity: 0.6">
+                Email адреса
+              </div>
+              <div class="col-7 text-white">email@example.com</div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-5 text-white" style="opacity: 0.6">Стать</div>
+              <div class="col-7 text-white">Чоловіча</div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-5 text-white" style="opacity: 0.6">
+                Дата народження
+              </div>
+              <div class="col-7 text-white">04.03.2006</div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-5 text-white" style="opacity: 0.6">Телефон</div>
+              <div class="col-7 text-white">+380...</div>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col-5 text-white" style="opacity: 0.6">
+                Дата реєстрації
+              </div>
+              <div class="col-7 text-white">24.03.2026</div>
+            </div>
+
+            <div class="text-end">
+              <button class="btn btn-outline-primary">
+                ✏️ Редагувати дані
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-auto">
+      <div class="container text-center">
+        <p>© 2026 C++alculator | Web Design Lab</p>
+        <small class="text-secondary"
+          >Розроблено для лабораторної роботи №1</small
+        >
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
