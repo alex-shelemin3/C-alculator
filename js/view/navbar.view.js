@@ -1,12 +1,16 @@
 (function initNavbar() {
   const isRoot = !window.location.pathname.includes("/pages/");
   const prefix = isRoot ? "pages/" : "";
+
   document.addEventListener("DOMContentLoaded", () => {
     const user = _getUser();
     _renderAuthNav(user, prefix);
   });
+
   function _getUser() {
     try {
+      const isLoggedIn = localStorage.getItem("cpp_session") === "true";
+      if (!isLoggedIn) return null;
       return JSON.parse(localStorage.getItem("cpp_user")) || null;
     } catch {
       return null;
@@ -48,8 +52,10 @@
         </li>
       `;
     }
+
     _markActiveLink();
   }
+
   function _markActiveLink() {
     const currentPage = window.location.pathname.split("/").pop();
     document.querySelectorAll(".navbar-nav a.nav-link").forEach((link) => {
@@ -61,6 +67,7 @@
       }
     });
   }
+
   function _escapeHtml(str) {
     return String(str)
       .replace(/&/g, "&amp;")
@@ -70,15 +77,9 @@
   }
 })();
 function logoutUser() {
-  localStorage.removeItem("cpp_user");
+  localStorage.removeItem("cpp_session");
   const isRoot = !window.location.pathname.includes("/pages/");
   window.location.href = isRoot ? "index.html" : "../index.html";
 }
-function _getUser() {
-  const currentEmail = localStorage.getItem("current_user");
-  const user = JSON.parse(localStorage.getItem("cpp_user"));
 
-  if (!currentEmail || !user) return null;
-  return user.email === currentEmail ? user : null;
-}
 window.logoutUser = logoutUser;

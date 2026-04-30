@@ -53,6 +53,7 @@ class AuthController {
     }
 
     if (this.model.validateCredentials(data.email, data.password)) {
+      this.model.openSession();
       this.view.showSuccess("Вхід успішний!");
       setTimeout(() => {
         window.location.href = "profile.html";

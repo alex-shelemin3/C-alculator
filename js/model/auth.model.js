@@ -1,6 +1,7 @@
 class AuthModel {
   constructor() {
     this.STORAGE_KEY = "cpp_user";
+    this.SESSION_KEY = "cpp_session";
   }
   saveUser(user) {
     const userWithMeta = {
@@ -18,10 +19,23 @@ class AuthModel {
       return null;
     }
   }
+  getSavedUser() {
+    try {
+      return JSON.parse(localStorage.getItem(this.STORAGE_KEY));
+    } catch {
+      return null;
+    }
+  }
   validateCredentials(email, password) {
-    const user = this.getUser();
+    const user = this.getSavedUser();
     if (!user) return false;
     return user.email === email && user.password === password;
+  }
+  closeSession() {
+    localStorage.removeItem(this.SESSION_KEY);
+  }
+  openSession() {
+    localStorage.setItem(this.SESSION_KEY, "true");
   }
   updateStats(clickCount, maxNumber) {
     const user = this.getUser();
@@ -32,5 +46,6 @@ class AuthModel {
   }
   deleteUser() {
     localStorage.removeItem(this.STORAGE_KEY);
+    localStorage.removeItem(this.SESSION_KEY);
   }
 }

@@ -4,9 +4,10 @@ class LoadProfileController {
     this.view = view;
   }
   loadProfile() {
-    const user = this.model.getUser();
+    const isLoggedIn = localStorage.getItem("cpp_session") === "true";
+    const user = JSON.parse(localStorage.getItem("cpp_user"));
 
-    if (!user) {
+    if (!isLoggedIn || !user) {
       alert("Спочатку увійдіть у систему!");
       window.location.href = "login.html";
       return;
