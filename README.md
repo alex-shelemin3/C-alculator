@@ -12,4 +12,4 @@
 Інструменти розробки: Javascript, VueJS, NodeJS, ExpressJS.
 
 Посилання на звіт: 
-https://docs.google.com/document/d/1zlbYjk4s0HhHvHPW58J5Y7Iz1GxANn5d1FCMHB44FbM/edit?usp=sharing
+https://docs.google.com/document/d/1nXsxeR9G3eiHOA6NcydV0pf_5jTNOoIlxoqmPYHfd4c/edit?usp=sharing
