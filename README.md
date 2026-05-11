@@ -13,6 +13,3 @@
 
 Посилання на звіт: 
 https://docs.google.com/document/d/1zlbYjk4s0HhHvHPW58J5Y7Iz1GxANn5d1FCMHB44FbM/edit?usp=sharing
-
-Сайт доступний за посиланням: 
-https://alex-shelemin3.github.io/C-alculator/
