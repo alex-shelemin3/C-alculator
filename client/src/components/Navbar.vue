@@ -66,7 +66,6 @@ const route = useRoute()
 const isLoggedIn = ref(false)
 const userName = ref('')
 
-// Функція для оновлення стану з LocalStorage
 const updateAuthStatus = () => {
   const token = localStorage.getItem('token')
   const user = localStorage.getItem('user')
@@ -80,8 +79,6 @@ const updateAuthStatus = () => {
     userName.value = ''
   }
 }
-
-// Слідкуємо за зміною маршруту (коли переходимо між сторінками, стан оновиться)
 watch(
   () => route.path,
   () => {

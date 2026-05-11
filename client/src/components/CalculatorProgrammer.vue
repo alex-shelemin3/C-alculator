@@ -211,7 +211,6 @@ const setBase = (newBase) => {
 
 const bitOp = (op) => {
   if (op === '~') {
-    // NOT операція
     const num = parseInt(display.value, base.value)
     if (!isNaN(num)) {
       display.value = (~num).toString(base.value).toUpperCase()
@@ -229,11 +228,9 @@ const calculate = async () => {
     const token = localStorage.getItem('token')
 
     if (token) {
-      // Якщо авторизований - відправляємо на бекенд
       const response = await calcAPI.calculate(display.value, base.value)
       display.value = response.data.result
     } else {
-      // Якщо не авторизований - обчислюємо локально
       const result = evaluateLocal(display.value, base.value)
       display.value = result
     }
@@ -248,7 +245,6 @@ const calculate = async () => {
   }
 }
 
-// Локальна функція обчислення
 const evaluateLocal = (expr, base) => {
   const match = expr.match(/^([0-9A-Fa-f]+)\s*(<<|>>|[+\-*/|&^%])\s*([0-9A-Fa-f]+)$/)
 

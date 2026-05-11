@@ -2,12 +2,7 @@
   <div class="container">
     <div class="calculator">
       <!-- Display -->
-      <input
-        v-model="display"
-        type="text"
-        class="calc-display form-control display"
-        disabled
-      />
+      <input v-model="display" type="text" class="calc-display form-control display" disabled />
 
       <!-- Button Grid -->
       <div class="row g-2">
@@ -146,11 +141,9 @@ const calculate = async () => {
     const token = localStorage.getItem('token')
 
     if (token) {
-      // Якщо авторизований - відправляємо на бекенд
       const response = await calcAPI.calculate(display.value, 10)
       display.value = response.data.result
     } else {
-      // Якщо не авторизований - обчислюємо локально
       const result = evaluateLocal(display.value)
       display.value = result
     }
@@ -164,8 +157,6 @@ const calculate = async () => {
     }, 2000)
   }
 }
-
-// Локальна функція обчислення (для гостей)
 const evaluateLocal = (expr) => {
   let prepared = expr
     .replace(/Math\.sqrt\(/g, 'Math.sqrt(')
@@ -175,7 +166,6 @@ const evaluateLocal = (expr) => {
   prepared = prepared.replace(/(\d+(?:\.\d+)?)%/g, (_, num) => {
     return '(' + num + '/100)'
   })
-
   const result = eval(prepared)
   if (result === undefined || result === null) throw new Error('Invalid')
   if (!isFinite(result)) throw new Error('Division by zero')
