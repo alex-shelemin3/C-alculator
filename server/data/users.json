@@ -16,10 +16,10 @@
     "gender": "Чоловіча",
     "birth": "0222-02-22",
     "password": "$2a$10$Tf3rybiIbugoFCrzmXXHyu9pxUOe.ctMpfzHg1IvBLJjdrw4UnctO",
-    "clickCount": 2,
-    "maxNumber": 58,
+    "clickCount": 4,
+    "maxNumber": 7992,
     "regDate": "11.05.2026",
     "id": "1778501274155",
-    "avatarUrl": "http://localhost:3000/uploads/avatars/avatar-1778503505888-373787569.jpg"
+    "avatarUrl": "http://localhost:3000/uploads/avatars/avatar-1778504974537-590799791.jpg"
   }
 ]
